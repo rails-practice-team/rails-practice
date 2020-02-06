@@ -1,13 +1,21 @@
 <div class="main">
   <% @tweets.each do |tweet| %>
-    <div class="card tweet">
-        <div class="d-flex">
-            <p class="pict"></p><p class="name">Name</p>
+    <%= link_to tweet_path(tweet) do %>
+        <div class="card tweet">
+            <div class="d-flex">
+                <p class="pict"></p><p class="name">Name</p>
+            </div>
+            <p class="card-body context"><%= tweet.context %></p>
         </div>
-        <p class="card-body context"><%= tweet.context %></p>
-    </div>
+    <% end %>
   <% end %>
 </div>
-<div class="side">
-</div>
-<div class="side"></div>
+<% if user_signed_in? %>
+    <div class="side">
+        <div>
+            <p class="pict"></p>
+            <p class="name"><%= current_user.name %></p>
+            <p class="card-body context">Introduction</p>
+        </div>
+    </div>
+<% end %>

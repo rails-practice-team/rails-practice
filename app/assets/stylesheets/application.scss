@@ -20,12 +20,53 @@
     box-sizing: border-box;
 }
 
+.devise-views{
+    margin: 100px auto;
+    width: 50%;
+    &button, input{
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+.user-outline{
+    width: 100%;
+}
+
+.top-outline{
+    background-image: url("pc-data.jpg");
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+}
+
+.top-views{
+    width: 50%;
+    margin: 300px auto;
+    & p .btn{
+        width: 100%;
+        border-radius: 5px;
+        z-index: 1;
+    }
+}
+
+.no-tweet{
+    width: 46%;
+    padding: 0 1%;
+    background-color: lighten(lightgray, 10%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 100px;
+    text-align: center;
+}
+
 .btn-default{
     border: 1px solid lightgrey;
 }
 
 .main{
-    width: 46%;
+    width: 100%;
     padding: 0 1%;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -66,7 +107,7 @@
 
 .side{
     border-left: 2px solid lightgray;
-    width: 27%;
+    width: 54%;
     height: 100%;
 }
 
@@ -80,7 +121,7 @@
 }
 
 .outline{
-    height: 85vh;
+    height: 90vh;
     border-top: 2px solid lightgray;
 }
 

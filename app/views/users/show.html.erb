@@ -1,2 +1,25 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% if @user.tweets.count != 0 %>
+    <div class="main">
+        <% @user.tweets.each do |tweet| %>
+            <%= link_to tweet_path(tweet) do %>
+                <div class="card tweet">
+                    <div class="d-flex">
+                        <p class="pict"></p><p class="name"><%= @user.name %></p>
+                    </div>
+                    <p class="card-body context"><%= tweet.context %></p>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+<% else %>
+    <div class="no-tweet">
+        <p>投稿してみよう</p>
+    </div>
+<% end %>
+<div class="side">
+    <div>
+        <p class="pict"></p>
+        <p class="name"><%= @user.name %></p>
+        <p class="card-body context">Introduction</p>
+    </div>
+</div>
