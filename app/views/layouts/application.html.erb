@@ -5,11 +5,30 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'none' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'none' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+      <header class="navbar-nav">
+        <div class="d-flex justify-content-around nav-box align-items-center">
+          <% if user_signed_in? %>
+            <p><%= link_to "マイページ", "#", class: "btn btn-default" %></p>
+            <p><%= link_to "Tweet", "#", class: "btn btn-default" %></p>
+            <p><%= link_to "ユーザー", "#", class: "btn btn-default" %></p>
+            <p><%= link_to "ログアウト", "#", class: "btn btn-default" %></p>
+          <% else %>
+            <p><%= link_to "トップ", "#", class: "btn btn-default" %></p>
+            <p><%= link_to "Tweet", "#", class: "btn btn-default" %></p>
+            <p><%= link_to "ログイン", "#", class: "btn btn-default" %></p>
+            <p><%= link_to "登録", "#", class: "btn btn-default" %></p>
+          <% end %>
+        </div>
+      </header>
+      <div class="d-flex outline">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

@@ -5,3 +5,55 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# User.create!({
+#     name: 'sample',
+#     email: 'sample@sample',
+#     password: 'samplesample'
+# })
+User.create!({
+    name: 'sample2',
+    email: 'a@sample',
+    password: 'sample2'
+})
+Tweet.create!({
+        context: 'hello',
+        user_id: 1
+})
+Tweet.create!({
+    context: 'hello',
+    user_id: 1
+})
+Tweet.create!({
+    context: 'hello',
+    user_id: 1
+})
+Tweet.create!({
+    context: 'hello',
+    user_id: 1
+})
+Tweet.create!({
+    context: 'hello',
+    user_id: 1
+})
+Tweet.create!({
+    context: 'hello',
+    user_id: 1
+})
+Tweet.create!({
+    context: 'hello',
+    user_id: 1
+})
+Tweet.create!({
+    context: 'hello',
+    user_id: 1
+})
+Tweet.create!({
+    context: 'hello',
+    user_id: 1
+})
+Tweet.create!({
+    context: 'hello',
+    user_id: 1
+})
+
+    
