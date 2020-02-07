@@ -1,16 +1,17 @@
 # README
 
-## 開発環境構築
+## 開発環境構築(初回必ずやる！)
 
-- http://localhost:3000 (アプリケーション)
+- 好きなフォルダで git clone git@github.com:rails-practice-team/rails-practice.git (フォルダをgithubからダウンロード)
 - Docker for Mac のinstall
-- https://docs.docker.com/docker-for-mac/install/
-
-### 基本的に初回のみ
+  - https://docs.docker.com/docker-for-mac/install/
+- cd rails-practice-team
 - docker-compose build
+- docker-compose run web rails db:migrate
 
 ### 毎回
 - docker-copmpose up (実行開始時)
+- http://localhost:3000 (アプリケーションURL)
 - docker-compose stop (実行停止時)
 
 ### rails コマンド入力時
