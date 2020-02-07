@@ -50,6 +50,20 @@
     }
 }
 
+.comment-views{
+    width: 100%;
+    padding: 1%;
+    & p .btn, textarea{
+        width: 100%;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    & p .input-area{
+        padding: 1%;
+        color: darken(gray, 10%);
+    }
+}
+
 .no-tweet{
     width: 46%;
     padding: 0 1%;

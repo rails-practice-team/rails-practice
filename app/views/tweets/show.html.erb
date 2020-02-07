@@ -1,2 +1,33 @@
-<h1>Tweets#show</h1>
-<p>Find me in app/views/tweets/show.html.erb</p>
+<div class="main">
+  <% @tweet.comments.each do |comment| %>
+    <%= link_to tweet_path(@tweet) do %>
+        <div class="card tweet">
+            <div class="d-flex">
+                <p class="pict">
+                    <%= attachment_image_tag comment.user, :image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
+                </p>
+                <p class="name"><%= comment.user.name %></p>
+            </div>
+            <p class="card-body context"><%= comment.context %></p>
+        </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="side">
+    <div>
+        <p class="pict">
+            <%= attachment_image_tag @tweet.user, :image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
+        </p>
+        <p class="name"><%= @tweet.user.name %></p>
+        <p class="card-body context"><%= @tweet.context %></p>
+        <div class="comment-views">
+            <%= form_with(model: @comment, url: comments_path) do |f| %>
+                <p>コメント</p>
+                <p><%= f.text_area :context, class: "input-area" %></p>
+                <%= f.hidden_field :tweet_id, :value => @tweet.id %>
+                <%= f.hidden_field :user_id, :value => current_user.id %>
+                <p><%= f.submit "コメント投稿", class:"btn btn-primary" %></p>
+            <% end %>
+        </div>
+    </div>
+</div>
