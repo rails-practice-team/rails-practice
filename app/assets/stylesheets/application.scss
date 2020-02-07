@@ -18,6 +18,36 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.transparent{
+    background-color: rgba($color: #000000, $alpha: .6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+
+.postTweet{
+    width: 40%;
+    height: 50%;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 3;
+    display: none;
+    padding: 2%;
 }
 
 .devise-views{
@@ -46,7 +76,6 @@
     & p .btn{
         width: 100%;
         border-radius: 5px;
-        z-index: 1;
     }
 }
 
@@ -56,7 +85,6 @@
     & p .btn, textarea{
         width: 100%;
         border-radius: 5px;
-        z-index: 1;
     }
     & p .input-area{
         padding: 1%;
@@ -89,6 +117,13 @@
 
 .tweet{
     margin: 2% 1%;
+    transition: all .2s;
+    &:hover{
+        border: 3px solid gray;
+        transition: all .2s;
+        transform: scale(1.01);
+        z-index: 2;
+    }
 }
 
 .context{
@@ -126,12 +161,24 @@
 }
 
 .navbar-nav{
-    padding: 1.2% .5% .4% .5%;
+    padding: 1% .5%;
 }
 
 .nav-box{
-    width: 40%;
+    width: 100%;
     height: auto;
+}
+
+.toggle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background-color: royalblue;
+    line-height: 50px;
+    margin-right: 1%;
 }
 
 .outline{

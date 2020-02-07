@@ -13,4 +13,9 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
+  # TODO update
+  private
+  def user_params
+    params.require(:user).permit(:name, :introduction)
+  end
 end
