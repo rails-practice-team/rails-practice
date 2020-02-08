@@ -19,7 +19,7 @@ default: &default
   encoding: unicode
   host: db
   username: postgres
-  password: POSTGRES_PASSWORD
+  password: hagari
   pool: 5
 
 development:
