@@ -1,0 +1,188 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.transparent{
+    background-color: rgba($color: #000000, $alpha: .6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+
+.postTweet{
+    width: 40%;
+    height: 50%;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 3;
+    display: none;
+    padding: 2%;
+}
+
+.devise-views{
+    margin: 100px auto;
+    width: 50%;
+    &button, input{
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+.user-outline{
+    width: 100%;
+}
+
+.top-outline{
+    background-image: url("pc-data.jpg");
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+}
+
+.top-views{
+    width: 50%;
+    margin: 300px auto;
+    & p .btn{
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+.comment-views{
+    width: 100%;
+    padding: 1%;
+    & p .btn, textarea{
+        width: 100%;
+        border-radius: 5px;
+    }
+    & p .input-area{
+        padding: 1%;
+        color: darken(gray, 10%);
+    }
+}
+
+.no-tweet{
+    width: 46%;
+    padding: 0 1%;
+    background-color: lighten(lightgray, 10%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.btn-default{
+    border: 1px solid lightgrey;
+}
+
+.main{
+    width: 100%;
+    padding: 0 1%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-break: keep-all;
+}
+
+.tweet{
+    margin: 2% 1%;
+    transition: all .2s;
+    &:hover{
+        border: 3px solid gray;
+        transition: all .2s;
+        transform: scale(1.01);
+        z-index: 2;
+    }
+}
+
+.context{
+    width: 100%;
+    background-color: lightgray;
+    margin-bottom: 0;
+}
+
+.pict{
+    width: 60px;
+    height: 60px;
+    background-color: bisque;
+    
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.name{
+    height: 60px;
+    width: auto;
+    line-height: 60px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.side{
+    border-left: 2px solid lightgray;
+    width: 54%;
+    height: 100%;
+}
+
+.navbar-nav{
+    padding: 1% .5%;
+}
+
+.nav-box{
+    width: 100%;
+    height: auto;
+}
+
+.toggle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background-color: royalblue;
+    line-height: 50px;
+    margin-right: 1%;
+}
+
+.outline{
+    height: 90vh;
+    border-top: 2px solid lightgray;
+}
+

@@ -1,0 +1,30 @@
+<div class="main">
+  <% @tweets.each do |tweet| %>
+    <%= link_to tweet_path(tweet) do %>
+        <div class="card tweet">
+            <div class="d-flex">
+                <p class="pict">
+                    <%= attachment_image_tag tweet.user, :image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
+                </p>
+                <p class="name"><%= tweet.user.name %></p>
+                <div class="ml-auto p-3">
+                    <p>コメント<%= tweet.comments.count %>件</p>
+                    <% d2 = Date.parse(tweet.created_at.to_s) %>
+                    <p><%= d2 %></p>
+                </div>
+            </div>
+            <p class="card-body context"><%= tweet.context %></p>
+        </div>
+    <% end %>
+  <% end %>
+</div>
+<% if user_signed_in? %>
+    <div class="side">
+        <div>
+            <p class="pict">
+                <%= attachment_image_tag current_user, :image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
+            </p>
+            <p class="name"><%= current_user.name %></p>
+        </div>
+    </div>
+<% end %>

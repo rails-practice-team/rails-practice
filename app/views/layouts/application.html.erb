@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'none' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'none' %>
+  </head>
+
+  <body>
+    <div>
+      <div class="transparent"></div>
+      <div class="postTweet form-group">
+        <%= form_with(model: Tweet.new, url: tweets_path, local: true) do |f| %>
+          <%= f.label :context, "つぶやこう" %>
+          <%= f.text_area :context, class: "form-control mt-2 mb-4", rows: "8", placeholder: "つぶやきを投稿してみよう" %>
+          <%= f.submit class:"btn btn-primary btn-block" %>
+        <% end %>
+      </div>
+      <header class="navbar-nav d-flex">
+        <div class="d-flex justify-content-left nav-box align-items-center">
+          <% if user_signed_in? %>
+            <p><%= link_to "マイページ", user_path(current_user), class: "btn btn-default m-2" %></p>
+            <p><%= link_to "Tweet", tweets_path, class: "btn btn-default m-2" %></p>
+            <p><%= link_to "ユーザー", users_path, class: "btn btn-default m-2" %></p>
+            <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-default m-2" %></p>
+            <div class="toggle ml-auto">＋</div>
+          <% else %>
+            <p><%= link_to "トップ", root_path, class: "btn btn-default m-2" %></p>
+            <p><%= link_to "Tweet", tweets_path, class: "btn btn-default m-2" %></p>
+            <p><%= link_to "ログイン", new_user_session_path, class: "btn btn-default m-2" %></p>
+            <p><%= link_to "登録", new_user_registration_path, class: "btn btn-default m-2" %></p>
+          <% end %>
+        </div>
+      </header>
+      <div class="d-flex outline">
+        <%= yield %>
+      </div>
+    </div>
+    <script>
+      // JS
+      // DOM取得
+      const screen = document.querySelector(".transparent");
+      const form = document.querySelector(".postTweet");
+      const toggle = document.querySelector(".toggle");
+      const on = "block"
+      const off = "none"
+      // clickイベント
+      toggle.addEventListener("click", (e) => {
+        screen.style.display=on;
+        form.style.display=on;
+      })
+      screen.addEventListener("click", (e) => {
+        screen.style.display=off;
+        form.style.display=off;
+      })
+    </script>
+  </body>
+</html>
