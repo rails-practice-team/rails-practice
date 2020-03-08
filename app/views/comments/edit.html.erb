@@ -1,0 +1,8 @@
+<div class="comment-views">
+    <%= form_with(model: @comment, local: true) do |f| %>
+        <p>コメント</p>
+        <p><%= f.text_area :context, class: "input-area", rows: "4" %></p>
+        <p><%= f.submit "コメント投稿", class:"btn btn-primary" %></p>
+    <% end %>
+    <p class="p-1"><%= link_to "コメント削除", comment_path(@comment), method: :delete %></p>
+</div>

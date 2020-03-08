@@ -7,7 +7,7 @@
     <% end %>
     <p class="m-4">コメント<%= @tweet.comments.count %>件</p>
         <% @comments.each do |comment| %>
-        <%= link_to tweet_path(@tweet) do %>
+        <%= link_to edit_comment_path(comment) do %>
             <div class="card tweet">
                 <div class="d-flex">
                     <p class="pict">
@@ -26,6 +26,9 @@
             <%= attachment_image_tag @tweet.user, :image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %>
         </p>
         <p class="name"><%= @tweet.user.name %></p>
+        <% if current_user.id == @tweet.user.id %>
+        <p class="p-1"><%= link_to "ツイート編集", edit_tweet_path(@tweet) %></p>
+        <% end %>
         <p class="card-body context"><%= @tweet.context %></p>
         <div class="p-1">
             <% d2 = Date.parse(@tweet.created_at.to_s) %>
