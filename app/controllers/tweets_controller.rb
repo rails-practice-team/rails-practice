@@ -30,6 +30,24 @@ class TweetsController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
+  def update
+    @tweet = Tweet.find(params[:id])
+    if @tweet.update(tweet_params)
+      redirect_to tweet_path(@tweet)
+    else
+      @tweet = Tweet.find(params[:id])
+      render :edit
+    end
+  end
+  def destroy
+    @tweet = Tweet.find(params[:id])
+    if @tweet.destroy
+      redirect_to tweets_path
+    else
+      @tweet = Tweet.find(params[:id])
+      render :edit
+    end
+  end
 
   private
   def tweet_params
